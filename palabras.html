@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Palabras · Sopa de Letras</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/palabras.css">
+</head>
+<body>
+  <main class="admin">
+    <h1>PALABRAS</h1>
+    <p class="lead">Escribe las palabras de tu sopa de letras. Para modificar una, edítala; para eliminarla, bórrala con el teclado.</p>
+
+    <form id="add-form" class="add-form" autocomplete="off">
+      <input id="new-word" type="text" maxlength="20" placeholder="Escribe una palabra" aria-label="Nueva palabra" autocapitalize="characters" spellcheck="false">
+      <button class="btn btn-secondary" type="submit">AGREGAR</button>
+    </form>
+
+    <p id="msg" class="msg" role="status" aria-live="polite"></p>
+
+    <ul id="words" class="words" aria-label="Lista de palabras"></ul>
+    <p id="empty" class="empty">Aún no hay palabras. Escribe la primera arriba.</p>
+
+    <p class="counter">Cantidad de palabras: <strong id="count">0</strong></p>
+
+    <div class="actions">
+      <button id="btn-save" class="btn btn-primary" type="button">GUARDAR</button>
+      <button id="btn-clear" class="btn btn-danger" type="button">ELIMINAR TODO</button>
+      <a class="btn btn-ghost" href="index.html">VOLVER AL JUEGO</a>
+    </div>
+  </main>
+  <script src="js/palabras.js"></script>
+</body>
+</html>

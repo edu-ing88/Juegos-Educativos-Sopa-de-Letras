@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sopa de Letras</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- PANTALLA DE INICIO -->
+  <section id="screen-start" class="screen active">
+    <div class="hero">
+      <div class="hero-letters" aria-hidden="true"><span>S</span><span>O</span><span>P</span><span>A</span></div>
+      <h1>SOPA DE LETRAS</h1>
+      <p>Encuentra las palabras escondidas del mundo escolar. Arrastra sobre las letras para marcarlas.</p>
+      <p id="start-notice" class="notice" role="status"></p>
+      <div class="hero-actions">
+        <button id="btn-start" class="btn btn-primary">INICIAR JUEGO</button>
+        <a id="btn-words" class="btn btn-secondary" href="palabras.html">PALABRAS</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUENTA REGRESIVA -->
+  <div id="countdown" class="countdown" hidden><span id="countdown-text"></span></div>
+
+  <!-- PANTALLA DE JUEGO -->
+  <section id="screen-game" class="screen">
+    <header class="topbar">
+      <div class="stats">
+        <div class="chip"><small>Puntos</small><strong id="score">0</strong></div>
+        <div class="chip"><small>Progreso</small><strong id="progress">0 de 10</strong></div>
+      </div>
+      <div class="tools">
+        <button id="btn-sound" class="btn btn-ghost" aria-pressed="true" title="Activar o desactivar sonido">🔊 Sonido</button>
+        <button id="btn-restart" class="btn btn-ghost" title="Reiniciar el juego">↻ Reiniciar</button>
+        <button id="btn-abandon" class="btn btn-ghost" title="Abandonar el juego">🚪 Abandonar</button>
+      </div>
+      <div class="timer" aria-label="Tiempo transcurrido"><small>Tiempo</small><strong id="timer">00:00</strong></div>
+    </header>
+
+    <p id="game-notice" class="notice notice-warn" role="status" hidden></p>
+    <ul id="word-list" class="word-list" aria-label="Palabras por encontrar"></ul>
+
+    <main class="board-wrap">
+      <div id="board" class="board" role="grid" aria-label="Cuadrícula de letras"></div>
+    </main>
+  </section>
+
+  <!-- VENTANA MODAL DE RESULTADOS -->
+  <div id="modal" class="modal" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="trophy" aria-hidden="true">🏆</div>
+      <h2 id="modal-title">¡FELICIDADES, HAS COMPLETADO EL RETO!</h2>
+      <p id="modal-msg" class="modal-msg"></p>
+      <div class="results">
+        <div><small>Puntaje</small><strong id="res-score">0</strong></div>
+        <div><small>Palabras</small><strong id="res-words">0</strong></div>
+        <div><small>Tiempo</small><strong id="res-time">00:00</strong></div>
+      </div>
+      <div class="modal-actions">
+        <button id="btn-again" class="btn btn-primary">VOLVER A JUGAR</button>
+        <button id="btn-exit" class="btn btn-ghost">SALIR</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- VENTANA MODAL: CONFIRMAR ABANDONO -->
+  <div id="modal-abandon" class="modal modal-abandon" hidden>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="abandon-title">
+      <div class="trophy" aria-hidden="true">🚪</div>
+      <h2 id="abandon-title">¿SEGURO QUE QUIERES ABANDONAR?</h2>
+      <p class="modal-msg">Si sales ahora, perderás tu progreso en esta partida.</p>
+      <div class="modal-actions">
+        <button id="btn-abandon-yes" class="btn btn-danger">SÍ</button>
+        <button id="btn-abandon-no" class="btn btn-primary">NO</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
